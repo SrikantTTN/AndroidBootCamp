@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+    flavorDimensions "version"
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.srikant.first"
@@ -16,6 +17,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors{
+        qa  {
+            dimension "version"
+            applicationId "com.example.srikant.qa.first"
+        }
+
+        prod {
+            dimension "version"
+            applicationId "com.example.srikant.prod.first"
+
+        }
+
+        dev {
+            dimension "version"
+            applicationId "com.example.srikant.dev.first"
+        }
+    }
+
 }
 
 dependencies {

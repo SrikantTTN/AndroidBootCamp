@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.loginmodule.LoginManager;
 
@@ -21,22 +22,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final ConstraintLayout cv = findViewById(R.id.mainConstraint);
         Button signInBtn = (Button) findViewById(R.id.signin);
-        final TextInputEditText password = (TextInputEditText) findViewById(R.id.password);
-        final TextInputEditText username = (TextInputEditText) findViewById(R.id.username);
+        final TextInputEditText passwordET = (TextInputEditText) findViewById(R.id.password);
+        final TextInputEditText usernameET = (TextInputEditText) findViewById(R.id.username);
         final LoginManager lmanager = new LoginManager();
-
-
-
+        final TextView nextQuestion = (TextView)findViewById(R.id.nextQuestion);
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String pass = password.getText().toString();
-                String uname = username.getText().toString();
+                String pass = passwordET.getText().toString();
+                String uname = usernameET.getText().toString();
                 if (uname.equals("") || uname == null || pass.equals("") || pass == null) {
-                    if (pass.equals("") || pass == null) {
-                        password.setError("Please Fill details");
+                    if (uname.equals("") || uname == null) {
+                        usernameET.setError("Please Fill details");
                     } else {
-                        password.setError("Please fill details");
+                        passwordET.setError("Please fill details");
                     }
                 }
                 else {
