@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.example.loginmodule.LoginManager;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 else {
-                    hideKeyboard(MainActivity.this);
+                    hideKeyboard(MainActivity2.this);
                     lmanager.setPass(pass);
                     lmanager.setUname(uname);
                     Snackbar.make(cv,lmanager.validateLogin(),Snackbar.LENGTH_SHORT).show();
